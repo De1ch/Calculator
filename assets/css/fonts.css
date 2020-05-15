@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'FreeSet';
+    src: url('../fonts/DS FreeSet.otf');
+    font-style: normal;
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'FreeSet';
+    src: url('../fonts/DS FreeSet-Medium.otf');
+    font-style: normal;
+    font-weight: bold;
+}
+ 
+@font-face {
+    font-family: 'FreeSet';
+    src: url('../fonts/DS FreeSet-Bold.otf');
+    font-style: normal;
+    font-weight: bolder;
+}
+@font-face {
+    font-family: 'DINPro';
+    src: url('../fonts/DINPro-CondBold.otf') format('opentype'),
+        url('../fonts/DINPro-CondBold.woff') format('woff');
+    font-style: normal;
+    font-weight: bolder;
+}
+/*
+@font-face {
+    font-family: 'MyriadPro';
+    src: url('../fonts/MyriadProCondRegular.ttf');
+    font-style: normal;
+    font-weight: normal;
+}*/
+@font-face {
+    font-family: 'MyriadPro';
+    src: url('../fonts/MyriadPro/MyriadProCondRegular.woff') format('woff'),
+        url('../fonts/MyriadPro/MyriadProCondRegular.ttf') format('truetype'),
+        url('../fonts/MyriadPro/MyriadProCondRegular.otf') format('opentype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/RobotoRegular/RobotoRegular.eot');
+    src: url('../fonts/RobotoRegular/RobotoRegular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/RobotoRegular/RobotoRegular.woff') format('woff'),
+        url('../fonts/RobotoRegular/RobotoRegular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}

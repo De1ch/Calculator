@@ -1,0 +1,288 @@
+@media (max-width: 1170px)
+    .b-container
+        width auto
+
+.b-header
+    @media (max-width: 768px)
+        position fixed
+        top 0
+        left 0
+        padding 8px 0
+        z-index: 99;
+        .col-logo
+            margin 0
+        .col-nav
+            display none
+            margin 0
+            position absolute 
+            top calc(100% + 1px)
+            left 0
+            z-index: 10
+            &.b-open
+                display block;
+        .col-toggle
+            display block
+            margin-right: 10px
+        .col-search
+            margin-right: 10px
+        .b-toggle-nav
+            width: 26px
+            height 19px
+            background: url('../images/x-toggle-mobile-menu.png') no-repeat
+    @media (max-width: 400px)
+        .b-logo
+            display block
+            &__img
+                width 100px
+
+.b-main-nav
+    @media (max-width: 768px)
+        background: white
+        font-size: 16px
+        ul
+            li
+                float none
+                position relative
+            ul
+                position absolute
+                top 0
+                left 100%
+        a
+            height auto
+            padding: 10px 15px
+
+.b-header-search.b-open
+    @media (max-width: 768px)
+        [type=text]
+            width 172px
+            padding: 0 10px;
+        .b-header-search__results
+            width 211px
+            font-size: 15px
+            padding: 15px 10px
+            right: 0;
+            left auto
+            transform: none
+            li
+                margin-bottom: 15px
+
+.x-blog-shemes
+    @media (max-width: 800px)
+        .x-item
+            width 100%
+        .x-item__inner
+            padding: 15px;
+    @media (max-width: 500px)
+        .x-item ul
+            width 100%
+
+.x-detail
+    @media (max-width: 1024px)
+        margin-bottom: 0
+        [itemprop=articleBody]
+            overflow: auto
+            width: 100%;
+        div.map
+            transform none
+            img
+                width 950px
+                height auto
+                max-width none
+
+.x-tabs-detail
+    @media (max-width: 768px)
+        margin-bottom: 5px
+        a
+            margin: 5px 5px;
+            padding: 15px 25px;
+
+.view-productdetails .b-layout-wrap__content
+    @media (max-width: 1024px)
+        background-size cover
+
+.b-layout-wrap__content
+    @media (max-width: 768px)
+        padding-top: 55px
+
+.x-products
+    margin: 0 0 30px
+    @media (max-width: 1024px)
+        .x-row
+            margin: 0 -10px
+        &-item
+            padding: 0 10px
+            &__sku
+            &__title
+                font-size: 18px
+            .x-product__count
+                flex-basis: 50%;
+    @media (max-width: 768px)
+        .x-horizontal-separator
+            display none
+        &-item
+            width 50%
+            margin-bottom: 20px
+    @media (max-width: 370px)
+        &-item
+            width 100%
+
+.x-pagination
+    @media (max-width: 1024px)
+        margin-top: 30px
+
+.x-product
+    @media (max-width: 1024px)
+        margin: 30px 0 30px;
+        &__count-title
+            margin-top: 30px
+        &__content
+            padding-top: 10px
+            padding-left: 20px
+    @media (max-width: 600px)
+        &__media
+            width 100%
+        &__content
+            width 100%
+            padding-left: 0
+        &__sku
+        &__title
+            font-size: 18px
+
+.b-cols_catalog
+    @media (max-width: 640px)
+        .b-col
+            width 100%
+        .b-video__video
+            height 250px
+
+.b-download
+    @media (max-width: 1130px)
+        &__btn
+            margin-bottom: 10px
+    @media (max-width: 1024px)
+        .b-caption
+            font-size: 18px
+            padding-left: 134px
+        &__product-img
+            width 104px
+    @media (max-width: 640px)
+        height 250px
+        padding 0
+        &__product-img
+            width 90px
+
+.b-cols_slider
+    @media (max-width: 1024px)
+        .b-row
+            flex-direction: column
+            align-items: center;
+        .b-col
+            width 100%
+            max-width 700px
+
+.b-slider
+    @media (max-width: 1024px)
+        .prev
+        .next
+            opacity 1
+
+.b-slide
+    @media (max-width: 768px)
+        &__text
+            padding: 0 0 0 10px
+        &__inner
+            padding: 10px
+    @media (max-width: 400px)
+        &__inner
+            display block
+        &__image
+            max-width none
+            margin-bottom: 10px
+
+.b-advantages
+    @media (max-width: 600px)
+        padding 10px
+        .b-caption
+            font-size: 18px
+    @media (max-width: 530px)
+        &:after
+            display none
+
+.b-product-item
+    @media (max-width: 1024px)
+        .b-caption
+            font-size: 18px
+        &__caption
+            padding-left: 119px
+    @media (max-width: 800px)
+        width 50%
+        margin-bottom: 25px
+        &__image
+            img
+                width 95px
+    @media (max-width: 580px)
+        width: 100%
+
+.b-modal-order
+    @media (max-width: 1024px)
+        &__content
+            width 100%
+        &__body
+            padding 25px 15px
+        .b-col_fields
+            width 100%
+        .b-col_media
+            display none
+    @media (max-width: 550px)
+        .b-form-group
+            .b-col
+                flex-basis: 50%
+                //width 50%
+            .b-col_product
+                flex-grow 1
+    @media (max-width: 410px)
+        .b-form-group
+            margin-bottom: 0
+            .b-col
+                flex-basis: 100%
+                margin-bottom: 10px
+
+.x-box-search
+    @media (max-width: 500px)
+        [type=text]
+            width 250px
+
+.panel-cart
+    @media (max-width: 768px)
+        min-width: 360px
+        top: 70px;
+        .rte__table-wrapper
+            max-height: calc(100vh - 250px);
+            table
+                td, th
+                    padding 5px
+.panel-in, .panel-out
+    @media (max-width: 768px)
+        top 70px
+
+.b-model-order
+    @media (max-width: 600px)
+        width 100%
+
+.item-page.b-docs-page
+    @media (max-width: 650px)
+        h1
+            font-size: 25px
+.b-doc-sections
+    @media (max-width: 650px)
+        margin-bottom: 30px
+        &__item__header
+            font-size: 20px
+        .b-item
+            padding: 0
+            &__row
+                flex-flow column wrap
+            &__name
+                font-size: 16px
+            &__title
+                margin-bottom: 7px

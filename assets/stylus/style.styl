@@ -1,0 +1,1388 @@
+
+flex(align = center, justify = flex-start, flow = row wrap)
+    display: flex
+    flex-flow: flow
+    justify-content: justify
+    align-items: align
+clearfix()
+    &::after
+        content: ''
+        display: block
+        clear both
+
+* {
+    box-sizing: border-box
+}
+html, body
+    height 100%
+body
+    font: 300 15px FreeSet, Arial
+    color: #404040
+a
+    display: inline-block
+    //vertical-align: middle
+    text-decoration: none
+button
+    border: none
+    cursor pointer
+    padding 0
+button
+input
+textarea
+select
+option
+    outline: none
+    font inherit
+img
+    max-width 100%
+::selection
+    background: #8a8c95
+    color white
+
+.b-clearfix
+    clearfix()
+.b-container
+    width: 1170px
+    margin 0 auto
+    padding 0 14px
+.b-caption
+    font: 22px DINPro
+    text-transform: uppercase
+    color: white
+    letter-spacing: 0.5px;
+
+//
+.b-layout-wrap
+    //min-width: 1200px;
+    min-height: 100%
+    flex(normal, flex-start, column nowrap)
+    overflow: hidden
+    &__content
+        flex-grow 1
+        padding-top: 56px
+        display: flex;
+        flex-flow: column;
+        background: url('../images/bg-bottom.jpg') center bottom no-repeat
+        background-size 100% auto
+        @media (max-width: 1200px)
+            padding-top: 0
+    &__footer
+        flex-grow 0
+.view-productdetails .b-layout-wrap__content
+    background-image url('../images/x-product__bg.jpg')
+    background-position: center center
+.view-category .b-layout-wrap__content
+    background-image url('../images/x-products__bg.jpg')
+    background-position: center top
+    background-size cover
+
+
+// Header
+.b-header
+    //height 56px
+    //padding 9px 0 8px
+    border-bottom: 1px solid #909092
+    position fixed
+    z-index: 10
+    top 0
+    left 0
+    width 100%
+    background: white
+    &.fancybox-margin
+        margin 0
+        right 17px
+        width auto
+    @media (max-width: 1200px)
+        position static
+    .b-container
+        flex(, flex-start)
+    .col-toggle
+        display none
+    .col-logo
+        margin-left: -8px
+    .col-nav
+        margin-left: 50px
+    .col-contact
+        //margin-left: auto
+        font 16px MyriadPro
+        text-align: right
+        /*.phone
+            margin-bottom: 1px*/
+        a
+            &:hover
+                text-decoration: underline
+    .col-search
+        margin 0 14px
+        margin-left: auto
+    .b-logo
+        &__img
+            display block
+    a
+        color: inherit
+    &-search
+        position relative
+        &.b-open
+            [type="text"]
+                width 374px
+                padding: 0 19px
+                opacity 1
+            [type=submit]
+                box-shadow 3px 3px 6px rgba(0,0,0,.07)
+            &.b-results
+                .b-header-search__results
+                    display block
+
+        [type="text"]
+        [type=submit]
+            border 1px solid #a6acb5
+        [type="text"]
+            width 0px
+            height 33px
+            padding: 0
+            border-right none
+            position absolute
+            top 0
+            left 0
+            transform: translateX(-100%)
+            opacity 0
+        [type=submit]
+            width 39px
+            height 33px
+            font-size: 0
+            background: url('../images/x-header__search.png?v=2') center center no-repeat
+            cursor pointer
+        &__results
+            display none
+            width 374px
+            max-height 254px
+            padding: 25px 19px
+            font-size: 18px
+            background: rgba(212, 218, 227, 0.8)
+            position absolute
+            top 100%
+            left 0
+            transform: translateX(-100%)
+            &.b-active
+                display block
+            li
+                margin-bottom: 11px
+                &:last-child
+                    margin 0
+            a
+                color #454545
+                &:hover
+                    text-decoration: underline
+            .simplebar-track
+                &.simplebar-vertical
+                    width 10px
+                    background: #a7adb6
+                .simplebar-scrollbar
+                    width 10px
+                    right 0
+                    cursor pointer
+                    &:before
+                        top 0
+                        bottom 0
+                        background: #f6f7f8 url('../images/b-header-search__results-scrollbar.png') center center no-repeat
+                        border-radius 0
+                        opacity 1 !important
+
+
+.b-main-nav
+    font-size: 14px
+    >ul
+        li
+            position relative
+            &:hover
+                > ul
+                    display block
+        > li
+            float left
+        ul
+            position absolute
+            top 100%
+            left 0
+            display none
+            background: white
+            a
+                height auto
+                padding: 10px 13px
+            ul
+                top 0
+                left 100%
+    li
+        &.active > a
+            background: #edf0f2
+            border-color #ebbb00
+            color #353535
+    a
+        display block
+        height 55px
+        padding 19px 13px 16px
+        border-bottom 2px solid transparent
+        color: #505050
+        white-space: nowrap;
+        &:hover
+            background: #edf0f2
+            border-color #ebbb00
+            color #353535
+
+//
+.b-cols
+    .b-container
+        padding 0
+    .b-row
+        flex(stretch)
+    .b-col
+        width 50%
+    &_catalog
+        margin 0 0 40px
+    &_slider
+        margin: 0 0 39px
+
+.b-download
+    position relative
+    padding 27px 0 0
+    height 327px
+    border 1px solid #e4e4e4
+    border-top none
+    background: url('../images/b-download__bg.jpg') no-repeat
+    background-size cover
+    &__product-img
+        position absolute
+        top 0
+        left 26px
+    &__caption
+        padding: 14px 10px 18px 180px
+        background: #7a7d8a
+        position relative
+        letter-spacing: 0.7px;
+        span
+            color: #ffe800
+            display block
+        &::after
+            content ''
+            position: absolute
+            right 0
+            bottom -19px
+            width 57px
+            height 57px
+            background: url('../images/download-title.png') no-repeat
+    &__btns
+        position: absolute
+        bottom: 16px
+        left 0
+        right 0
+        z-index 2
+        text-align center
+    &__btn
+        display inline-block
+        border 1px solid #c6c3c6
+        padding 0 12px 0 9px
+        margin 0 6px
+        font-size: 16px
+        background: rgba(121, 123, 135, 0.7)
+        color: white
+        &:hover
+            background-color: rgba(255, 255, 255, 0.8);
+            color #6a6c7b
+            border-color #7c7e89
+            span
+                border-color #7c7e89
+                &:after
+                    background-position-y: bottom
+        span
+            border-right 1px solid #e9e8e8
+            display inline-block
+            padding: 6px 3px 4px 0
+            margin-right: 7px;
+            font-weight: bold
+            line-height: 1;
+            &:after
+                content ''
+                display inline-block
+                vertical-align: middle;
+                width: 18px
+                height 19px
+                margin: 0 0 0 7px
+                position relative
+                top -1px
+                background: url('../images/b-download__btn.png') no-repeat left top
+
+
+.b-video
+    position relative
+    &__video
+        display block
+        width 100%
+        height 100%
+        position relative
+    &__link
+        display block
+        width 100%
+        height 100%
+        background: url('../images/b-video__bg.jpg') no-repeat center center
+        background-size cover
+        position absolute
+        top 0
+        left 0
+        &:after
+            content: ''
+            display block
+            width 37px
+            height 25px
+            background: url('../images/b-video__link-hover.png') no-repeat center top
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-31%,-35%)
+        /*&:hover:after
+            //background-position-y: bottom;
+            background: url('../images/b-video__link-hover.png') no-repeat center top*/
+
+// Slider
+.b-slider
+    background: #fbfbfb
+    border 2px solid #e8e9ed
+    height 100%
+    &:hover
+        .prev
+        .next
+            opacity 1
+    .prev
+    .next
+        width 28px
+        height 28px
+        cursor pointer
+        position absolute
+        top 50%
+        z-index: 2
+        transform: translateY(-50%)
+        opacity 0
+        transition: opacity 0.2s
+    .prev
+        left 0
+        background-image: url('../images/slide__prev.jpg?v=2')
+    .next
+        right 0
+        background-image: url('../images/slide__next.jpg')
+
+.b-slide
+    outline: none
+    &__inner
+        padding 13px 23px 13px 12px
+        font-size: 16px
+        flex(flex-start, , nowrap)
+    &__caption
+        margin 0 0 17px
+        font-size: 20px
+        letter-spacing: 0.4px;
+        color #6a6c7b
+    &__text
+        padding: 9px 0 0 30px
+        color #424243
+    &__image
+        min-width 166px
+    ul
+        line-height: 1.2;
+    li
+        position relative
+        padding-left: 24px
+        margin-bottom: 4px;
+        &::before
+            content ''
+            width 9px
+            height 9px
+            background: #adaab1
+            display inline-block
+            vertical-align: baseline
+            position absolute
+            top 6px
+            left 0
+
+//
+.b-advantages
+    flex(stretch, , nowrap)
+    background: #ebecf0
+    padding 5px 20px 5px 13px
+    height: 100%;
+    position relative
+    &::after
+        content ''
+        display block
+        width 128px
+        height 216px
+        background: url('../images/b-advantages__bg.png') no-repeat
+        position absolute
+        top 7px
+        right 3px
+    &__captions
+        padding-right: 15px
+        font-size: 30px
+        text-align: right
+        li
+            margin 0 0 10px
+            color #6a6c7b
+            font-size: inherit
+    &__descriptions
+        padding: 4px 0 0 0;
+        color #424243
+        font-size: 13px
+        li
+            margin 0 0 4px
+    li
+        &:last-child
+            margin 0
+
+// Products
+.b-products
+    margin 0 0 51px
+    .b-row
+        flex(stretch)
+        margin 0 -15px
+.b-product-item
+    width 33.33%
+    padding 0 15px
+    font-size: 14px
+    transition transform 0.2s
+    &:nth-child(1) &__image
+        top: 2px;
+        left: 8px;
+    &:nth-child(3) &__image
+        top 42px
+    &:hover
+        transform: scale(1.1)
+    &__inner
+        border 1px solid #c1ccd2
+        background: #fbfbfb
+        position relative
+        padding 42px 0 21px
+        &:after
+            content ''
+            position: absolute
+            right 0
+            bottom 0
+            width 38px
+            height 19px
+            background: url('../images/product__angle.jpg') no-repeat
+        ^[0]:hover &
+            box-shadow: 3px 3px 7px 0px rgba(0,0,0,.2)
+    &__image
+        position absolute
+        top 5px
+        left 13px
+        z-index: 2
+    &__caption
+        background: #9699a4
+        padding 17px 10px 15px 147px
+        position relative
+        &:before
+            content ''
+            position: absolute
+            top -19px
+            left 0
+            width 57px
+            height 38px
+            background: url('../images/product__title.png') no-repeat
+    &__text
+        padding 28px 10px 0 147px
+        line-height: 1.4;
+        //margin 34px 0 0
+    &__description
+        margin 0 0 16px
+    &__btn-order
+        border: 1px solid #7c8c92
+        padding 0px 9px
+        color #556267
+        &:hover
+            background: #cad0d9
+            border-color #cad0d9
+            color #454545
+
+//
+.b-footer
+    background: #8a8c95
+    color: #ffffff
+    padding 19px 0
+    letter-spacing: -0.4px
+    position relative
+    z-index 10
+    .b-container
+        padding 0 30px
+    .b-row
+        flex(, space-between)
+    .b-col
+        &_copyright
+            font-family: Roboto
+
+    .intuit-logo
+        vertical-align: text-top;
+        width: 101px
+        height 16px
+        margin-left: 5px
+        font-size: 0
+        background: url('../images/intuit-logo.png') no-repeat
+        &:hover
+            background-position-y: bottom
+
+//.page-header
+    h1
+        margin: 35px 0 30px
+        padding-left: 14px
+        font: 30px DINPro
+        letter-spacing: .0px
+        text-transform: uppercase
+        color: #454545
+
+.b-component
+    p
+        margin-bottom: 15px
+    a
+        text-decoration: underline
+        color #82848c
+
+.b-layout-products .blog
+    margin-bottom: 83px
+    .items-row
+        display flex
+        justify-content: flex-start
+        align-items: flex-start
+        margin 0 -15px 20px
+    .span4
+        width: 33.33%
+        padding 0 15px
+    .item-image
+        text-align: center
+
+.b-layout-news .blog
+    margin-bottom: 83px
+    /*.items-row
+        display flex
+        justify-content: flex-start
+        align-items: flex-start
+        margin 0 -15px 20px*/
+    /*.span4
+        width: 33.33%
+        padding 0 15px
+    .item-image
+        text-align: center*/
+    .items-row
+        &:last-child .item
+            border none
+    .item
+        flex(normal, normal, row nowrap)
+        margin-top: 30px
+        padding-bottom: 32px
+        border-bottom 1px solid #8a8c95
+
+        &__media
+            width: 30%;
+            img
+                display block
+        &__content
+            width: 70%;
+            padding-left: 60px
+            font-size: 15px
+            flex(normal, normal, column nowrap)
+        &__intro
+            margin: 27px 0 20px;
+            line-height: 1.4;
+        h2
+            font: 22px DINPro
+            letter-spacing: 0.7px;
+            line-height: 1.3;
+            text-transform: uppercase
+            color #8a8c95
+            a
+                color inherit
+        .readmore
+            margin: auto 0 10px
+
+.b-layout-contacts
+    .b-content
+        clearfix()
+        padding 40px 68px 83px 83px
+        h1
+            padding: 0
+            margin 0 0 19px
+        h2
+            @extend h1
+            padding: 0
+            margin 0 0 11px
+    .b-component
+    .b-after-component
+        width 50%
+        float left
+    .b-component
+        padding-right: 15px
+    .b-after-component
+        padding-left: 15px
+
+.b-not-found
+    width 449px
+    margin 0 auto 120px
+    text-align: center
+    position relative
+    &__text
+        color #414143
+        position absolute
+        left 0
+        right 0
+        bottom 29px
+        h1
+            margin 0 0 10px
+            padding: 0
+            font-size: 24px
+            font-family inherit
+            font-weight: 300;
+            letter-spacing: 1.8px;
+            color inherit
+        p
+            margin 0
+            text-transform: uppercase
+            font-size: 13px
+            line-height: 1.5;
+            letter-spacing: 1.5px;
+
+.b-feedback
+    .b-row
+        flex(flex-start)
+        margin 0 -8px
+    .b-col
+        flex-grow 1
+        flex-basis: 0;
+        padding: 0 8px
+    .b-form-group
+        margin-bottom: 14px
+    input
+    textarea
+        width 100%
+        border 1px solid #b8bec6
+        border-radius 4px
+        background: transparent
+    input
+        height 35px
+        padding 0 18px
+    textarea
+        height 118px
+        padding 8px 18px
+    &__wrap-submit
+        text-align: right
+
+.b-modal-order
+    display none
+    background: rgba(0, 0, 0, 0.6)
+    position fixed
+    top 0
+    left 0
+    right 0
+    bottom 0
+    z-index: 11
+    overflow-y: auto;
+    &.b-visible
+        flex(center, flex-start, column nowrap)
+    &__content
+        width 947px
+        margin: 0
+        border-radius 2px
+        font-size: 14px
+        background: #ffffff
+        position relative
+    &__header
+        padding: 23px 35px 24px
+        border-bottom 1px solid #e5e5e5
+    &__body
+        padding 26px 31px 30px
+    &__logo
+        display block
+    &__title
+        margin-bottom: 26px
+        line-height: 1.5;
+    .b-form-group
+        margin-bottom: 15px
+    .b-row
+        flex(flex-start)
+        margin 0 -8px
+    .b-col
+        flex-grow 1
+        flex-basis: 0;
+        padding: 0 8px
+        &_fields
+            width 72%
+        &_media
+            width 28%
+        &_fields
+        &_media
+            flex-grow: 0;
+            flex-basis: auto;
+        &_product
+            flex-basis: 39%;
+            flex-grow: 0;
+    input
+    textarea
+        width 100%
+        border 1px solid #b8bec6
+        border-radius 2px
+        background: transparent
+        color #8b8b8b
+    input
+        height 31px
+        padding 0 11px
+    textarea
+        display block
+        max-width 100%
+        min-width 100%
+        height 111px
+        padding 5px 11px
+    &__wrap-submit
+        text-align: center
+    &__submit
+        height 33px
+        padding 0 19px
+        margin-top: 5px
+        font-size: 14px
+        letter-spacing: 0.5px;
+        border none
+        background: #cad0d9
+        color #454545
+        &:hover
+            background: #b0b7bf
+        &[disabled]
+            pointer-events: none;
+    .b-checkbox
+        display block
+        position relative
+        //padding-left: 41px
+        margin-bottom: 9px
+        &:last-child
+            margin-bottom: 0
+        &__input
+            position absolute
+            width 5px
+            height 5px
+            opacity 0
+            padding 0
+            margin 0
+            &:checked + .b-checkbox__mark
+                background: url('../images/b-checkbox-mark.png') no-repeat center center
+            //&:disabled + .b-checkbox__mark
+            &.unchecked + .b-checkbox__mark
+                background: #f0f0f2
+        &__mark
+            display inline-block
+            vertical-align: middle
+            width 34px
+            height 21px
+            margin-right: 4px
+            border 1px solid #b8bec6
+            border-radius 2px
+            background: white
+            cursor pointer
+            /*position absolute
+            top 0
+            left 0*/
+    .jq-selectbox
+        width: 100%;
+        line-height: 29px;
+        padding-left: 10px
+        border 1px solid #b8bec6
+        cursor pointer
+        &.opened .jq-selectbox__trigger
+            transform: rotate(90deg)
+        /*&__select
+            height 29px*/
+        &__trigger
+            width: 9px
+            height 15px
+            background: url('../images/b-select-arrow.png') no-repeat
+            position absolute
+            top 7px
+            right 12px
+        &__dropdown
+            padding 18px 10px
+            border 1px solid #b8bec6
+            line-height: 1.2
+            text-transform uppercase
+            font-size: 15px
+            color #8b8b8b
+            background: white
+            box-shadow: 0 0 3px rgba(0,0,0,0.3)
+            top 31px !important
+            li
+                margin-bottom: 8px
+                &:last-child
+                    margin: 0
+                &:hover
+                    color #505050
+            .sel
+                color #505050
+                text-decoration: underline
+    .b-input-kg
+    .b-input-m
+        text-align: left !important
+    &__close
+        width 17px
+        height 17px
+        background: url('../images/b-modal-order__close.png')
+        cursor pointer
+        opacity 0.8
+        position: absolute
+        top 28px
+        right 31px
+        &:hover
+            opacity 1
+    .b-message
+        text-align: center
+        margin-bottom: 10px
+        color #1a6c1a
+        &_error
+            color #aa1b1b
+
+
+
+.b-collage
+    img
+        display: block
+
+.b-model
+    &-order
+        margin: 30px auto
+        width 560px
+        h1
+            padding: 0
+            margin 0 0 20px
+        h2
+            margin 15px 0
+            font-size: 18px
+        /*&__form
+            width 560px
+            margin: auto*/
+        &__empty
+        &__message
+        &__header
+            text-align: center
+        .b-row
+            flex()
+            margin 0 -5px 15px
+        .b-col
+            padding 0 5px
+            flex-grow 1
+            flex-basis: 0
+        input
+        textarea
+            width 100%
+            border: 1px solid #b8bec6;
+            border-radius: 4px;
+            background: transparent;
+            margin-top: 3px;
+        input
+            height: 35px;
+            padding: 0 18px;
+        textarea
+            height: 118px;
+            padding: 8px 18px;
+        &__wrap-submit
+            text-align: center
+        .b-submit
+            width auto
+            height: 33px;
+            margin 10px auto 0
+            border: none;
+            border-radius 0
+            padding: 0 19px;
+            font-size: 14px;
+            letter-spacing: .5px;
+            background: #cad0d9;
+            color: #454545;
+            cursor pointer
+            &:hover
+                background: #b0b7bf;
+        .b-message
+            text-align: center;
+            font-size: 17px;
+            color #1a6c1a
+            &_error
+                color #aa1b1b
+        .x-items
+            //text-align: center
+            &__item
+                margin-bottom: 5px
+            table
+                width 100%
+                th
+                    font-weight: bold
+        .x-total
+            display none
+
+.x-hidden-price
+    .panel-cart
+        th:nth-child(3)
+        th:nth-child(5)
+        .x-price
+        .x-sum
+            display: none
+        .product_info
+            strong
+                display none
+.panel-cart
+    position: fixed;
+    top: 105px;
+    right: 0;
+    background-color: rgba(220,220,220,0.95);
+    border: 1px solid #c8c8c8;
+    width: 25%;
+    min-width: 400px;
+    height: auto;
+    padding: 15px;
+    z-index: 20;
+    color: #000;
+    text-align left
+    .rte__table-wrapper, .x-btn, .title
+        display none
+    .title-empty
+        display block
+    &.is-fill
+        .rte__table-wrapper, .x-btn, .title
+            display block
+        .title-empty
+            display none
+    button, .btn-cart, .x-btn
+        float: right;
+        background-color: #a9acb2;
+        text-transform: uppercase;
+        color: #4f4f4f;
+        font-size: 11px;
+        padding: 8px;
+        border: none;
+        margin-top: 6px;
+        text-decoration: none
+        border 1px solid #c8c8c8
+        &:hover
+            background: #ffe900
+            border-color #7c8c92
+    p
+        margin: 0;
+        line-height: 13px;
+        background-color: #fff;
+        padding: 5px;
+    .variant_id
+        padding-top: 7px;
+        padding-left: 8px;
+        padding-bottom: 7px;
+        margin-bottom: 5px;
+        font-size: .85em;
+        background-color: #fff;
+        width: 100%;
+    h6
+        font-weight: bold
+        margin-bottom: 10px
+        margin-top: 40px;
+        &:first-child
+            margin-top: 0
+    small
+        font-size: 80%;
+    b, strong
+        font-weight: bold
+    tfoot
+        display none
+    .rte__table-wrapper
+        font-size: 0.8em;
+        max-width: 100%;
+        overflow-y: auto;
+        max-height: calc(100vh - 350px);
+        table
+            width 100%
+            background-color: #f7f7f7;
+            td, th
+                //padding: 4px;
+                padding: 10px;
+                //border: 1px solid #fff;
+                text-align: left;
+                border: 1px solid #f7f7f7;
+                vertical-align: middle;
+            a
+                text-decoration: none
+        .x-count
+            width: 50px;
+            text-align: center;
+            padding: 0px;
+            font-size: 12px
+            &__num
+                position: relative;
+                top: 3px;
+        .x-minus
+        .x-plus
+            background-color: transparent;
+            color: inherit;
+            font-weight: bold;
+            width 17px
+            height 20px
+            line-height: 18px
+            border: 1px solid #c8c8c8;
+            &:hover
+                background: #ffe900
+        .x-minus
+            float: left;
+        .x-plus
+            float: right;
+        td:nth-of-type(5)
+            width: 10px;
+        .x-delete
+            width: 12px;
+            height: 12px;
+            display: block;
+            padding: 0px;
+            line-height: 12px;
+            font-size: 0;
+            text-align: center;
+            background: url('../images/b-cart__delete.png') no-repeat center center
+            color: inherit;
+
+.panel-in, .panel-out
+    position: fixed;
+    top: 105px;
+    right: 0;
+    height: auto;
+    z-index: 20;
+    width: auto !Important;
+    min-width: 0px !Important;
+    background-color: transparent;
+    color: #006eff;
+    padding: 0;
+    cursor pointer
+    i
+        display block
+        width 55px
+        height 55px
+        background: no-repeat center center url('../images/b-cart_toggle.png')
+.panel-in
+    i
+        background-color #dddddd
+
+.x-detail
+    text-align: center
+    margin-bottom: 13%
+    div.map
+        display: inline-block !important
+        margin auto
+        transform: scale(1.2);
+        transform-origin: top;
+        img
+            position static !important
+    [itemprop=articleBody]
+        display inline-block
+        text-align: center
+
+.x-tabs-detail
+    text-align: center
+    a
+        display inline-block
+        font-size: 15px;
+        font-weight: bold;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 15px 45px;
+        text-decoration: none
+        background-color: #006eff;
+        color: #fff;
+        margin: 10px;
+        &.x-active
+        &:hover
+            background-color: #0058cc;
+
+.x-product
+    margin: 90px 0 136px
+    font-size: 15px
+    letter-spacing: 0.04em;
+    flex(flex-start, , )
+    //&__row
+    &__media
+        width: 47.8%;
+    &__content
+        width 52.2%
+        padding-top: 47px;
+        padding-left: 54px;
+    &__title
+    &__sku
+        font-family: DINPro
+        font-size 22px
+        color #8a8c95
+    &__title
+        padding: 0
+        margin: 0 0 2px
+    &__characteristics
+        margin-top: 20px;
+    &__weight
+        margin-bottom: 6px;
+    //&__price
+    &__btns-wrap
+        flex()
+    &__count
+        width 36%
+        flex(,, row nowrap)
+        &-title
+            margin-top: 90px;
+            margin-bottom: 13px;
+            color #8a8c95
+        &-plus
+        &-minus
+        &-input
+            height 33px
+            border 1px solid #b0b7bf
+            background: white center center no-repeat
+        &-plus
+        &-minus
+            //width 37px
+            flex-basis: 37px;
+            flex-shrink: 0;
+            //background: center center no-repeat
+        &-plus
+            background-image url('../images/x-product__count-plus.png')
+        &-minus
+            background-image url('../images/x-product__count-minus.png')
+        &-input
+            width: 100%;
+            flex-grow: 1;
+            flex-basis: 0;
+            border-left none
+            border-right none
+            text-align center
+    &__addtocart
+        width 64%
+        height 33px
+        font-size: 16px
+        letter-spacing: inherit
+        color #454545
+        background: #cad0d9
+        &:hover
+            background: #b0b7bf
+    &__back
+        margin-top: 40px;
+    a&__link-back
+        text-decoration: underline
+        color inherit
+
+.x-products
+    margin 0 0 50px
+    h1
+        margin 37px 0 14px
+        padding 0
+        font-size: 30px
+        color #454545
+    .x-row
+        flex(stretch)
+        margin: 0 -15px
+    .x-horizontal-separator
+        border-bottom 1px solid #969696
+        margin: 35px 0 32px
+    &-item
+        flex(normal, normal, column wrap)
+        width 25%
+        padding: 0 15px
+        &__media
+            width 100%
+            a, img
+                display block
+                width 100%
+            &-img
+                border 1px solid #8a8c95
+                padding-bottom: 100%
+                background: center center
+                background-size cover;
+        &__title
+        &__sku
+            font: 22px DINPro
+            color #8a8c95
+        &__title
+            margin: 11px 0 2px;
+            text-transform: uppercase
+            a
+                text-decoration: none
+        &__sku
+            margin-top: auto
+        &__price
+            margin: 17px 0px 0
+            font-size: 18px
+        .x-product
+            &__btns-wrap
+                margin-top: 16px
+            &__count
+            &__addtocart
+                width auto
+            &__count
+                flex-basis: 38%;
+            &__addtocart
+                flex-grow 1
+            &__count-minus
+            &__count-plus
+                flex-basis: 30px;
+
+.x-box-search
+    margin: 35px 0 40px
+    &__info
+        font 20px DINPro;
+        text-transform: uppercase
+        &-keyword
+            color #8a8c95
+            span
+                text-decoration: underline
+    &__inner
+        flex()
+    [type=text]
+        width: 357px;
+        padding: 0 15px
+        text-transform: uppercase
+    [type=text]
+    [type=submit]
+        height 31px
+        border 1px solid #cccccc
+        vertical-align: middle
+        background: #fff center center no-repeat
+    [type=submit]
+        width 37px
+        border-left none
+        font-size: 0
+        cursor pointer
+        background-image url('../images/x-box-search__btn.png?v=2')
+
+.x-pagination
+    margin: 60px 0 0
+    text-align: center
+    font-size: 20px
+    overflow hidden
+    &:before
+    &:after
+        content ''
+        width 100%
+        display inline-block
+        vertical-align: middle
+        height 1px
+        background #b5bac2
+    &:before
+        margin-left -100%
+    &:after
+        margin-right -100%
+    ul
+        display inline-block
+        vertical-align: middle
+        margin: 0 9px
+    li
+        float left
+    span
+    a
+        padding 3px 14px
+        display block
+    a
+        text-decoration: none
+        background: #cad0d9
+        color #808080
+    span
+        background: #f9cb0c
+        color #3f6f89
+    .pagination-start
+    .pagination-end
+    .pagination-prev
+    .pagination-next
+        display none
+
+.x-blog-shemes
+    .x-row
+        flex(stretch)
+        margin: 0 -10px
+    .x-item
+        width: 50%
+        padding 0 10px
+        &__inner
+            padding: 40px
+            background: #fff
+        h2
+            font-size: 1.25em;
+            font-weight: 400;
+            text-transform: uppercase;
+        ul, li
+            list-style: none
+        ul
+            width 200px
+        &__link
+            padding: 10px;
+            margin: 0px 3px 5px 0px;
+            width: 100%;
+            text-align: center
+            text-decoration: none
+            background-color: #b7bfc8;
+            color #404040
+            &:hover
+                background: #ffe900
+        &__grid
+            flex(flex-start)
+            &__left
+            &__right
+                width 50%
+
+.item-page.b-docs-page
+    h1
+        font-size: 30px
+        color #404040
+        //margin: 0 0 20px
+        padding: 0
+.b-doc-sections
+    margin-bottom: 102px
+    font-size: 15px
+    color #575c5d
+    &__item
+        //border-bottom 1px solid #b0b7bf
+        margin-bottom: 25px
+        &:last-child
+            border none
+        &__header
+            margin: 0 0 25px
+            font: 25px DINPro;
+            letter-spacing: .6px;
+            text-transform: uppercase;
+            color #8a8c95
+    .b-item
+        border-bottom 2px dotted #dadddf
+        margin-bottom: 20px
+        padding-bottom: 20px;
+        &:last-child
+            border none
+            margin-bottom 0
+        &__row
+            flex(flex-start, , row nowrap)
+            margin: 0 -15px
+            > div
+                padding 0 15px
+        &__name
+            width 195px
+            flex-shrink 0
+            margin-bottom: 17px
+            h3
+                margin 0
+                font-size: 18px
+                font-weight: bold
+                letter-spacing: .5px;
+                text-transform: uppercase
+        &__title
+            line-height: 1.2;
+            letter-spacing: .2px;
+            margin-top: 3px;
+            margin-bottom: 17px
+            color #8a8c95
+        &__size
+            min-width 130px
+        &__desc
+            flex-grow: 1
+            line-height: 1.55
+            letter-spacing: .5px;
+            p:last-child
+                margin-bottom: 0
+        &__download
+            display inline-block
+            border 1px solid #7c8c92
+            padding: 1px 7px 0px
+            text-decoration: none
+            background: white
+            color inherit
+            &:hover
+                background #cad0d9
+                border-color #cad0d9
